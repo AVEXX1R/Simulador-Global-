@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simuladores Global Plus - Menu Principal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1></i><img src="logo.png" alt="Logo" class="logo"></h1>
+                </div>
+                <p class="subtitle">Escolha o simulador ideal para suas necessidades</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="simulators-grid">
+                
+                <!-- Simulador de Investimento Total -->
+                <div class="simulator-card" data-simulator="total">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h2>Simulador de Precificação</h2>
+                        <span class="card-badge">Projeto de Implantação</span>
+                    </div>
+                    
+                    <div class="card-content">
+                        <p class="card-description">
+                            Calcule o investimento total para implantação do sistema Global Plus, 
+                            incluindo integrações, funcionalidades e treinamentos.
+                        </p>
+                        
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Integrações com ERP</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Funcionalidades Básicas e Avançadas</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Treinamentos Inclusos</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Relatório Detalhado</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">5</span>
+                                <span class="stat-label">Blocos</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">25+</span>
+                                <span class="stat-label">Opções</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <button class="btn btn-primary" onclick="acessarSimulador('app-total')">
+                            <i class="fas fa-rocket"></i>
+                            Acessar Simulador
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Simulador de Investimento Mensal -->
+                <div class="simulator-card" data-simulator="mensal">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h2>Simulador de Investimento Mensal</h2>
+                        <span class="card-badge">Custos Recorrentes</span>
+                    </div>
+                    
+                    <div class="card-content">
+                        <p class="card-description">
+                            Calcule os custos mensais de operação do sistema Global Plus, 
+                            incluindo licenças, telefonia, créditos e serviços.
+                        </p>
+                        
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Licenciamento de Usuários</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Telefonia e Discador</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Créditos de Notificações</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Portal Financeiro</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">6</span>
+                                <span class="stat-label">Blocos</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">30+</span>
+                                <span class="stat-label">Opções</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <button class="btn btn-secondary" onclick="acessarSimulador('app-mensal')">
+                            <i class="fas fa-chart-bar"></i>
+                            Acessar Simulador
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção de Informações Adicionais -->
+            <section class="info-section">
+                <div class="info-content">
+                    <h3><i class="fas fa-info-circle"></i> Como Usar os Simuladores</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-mouse-pointer"></i>
+                            </div>
+                            <h4>1. Selecione suas Opções</h4>
+                            <p>Escolha as funcionalidades e quantidades que melhor atendem às suas necessidades.</p>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h4>2. Visualize os Cálculos</h4>
+                            <p>Acompanhe em tempo real o cálculo dos valores conforme suas seleções.</p>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <h4>3. Gere seu Relatório</h4>
+                            <p>Obtenha um relatório detalhado com todas as opções e valores selecionados.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2025 Global Plus. Todos os direitos reservados.</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Suporte</a>
+                    <a href="#" class="footer-link">Documentação</a>
+                    <a href="#" class="footer-link">Contato</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Carregando simulador...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
