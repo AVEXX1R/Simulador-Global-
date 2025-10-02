@@ -328,7 +328,7 @@ function imprimirRelatorio() {
     janela.document.write(`
         <html>
             <head>
-                <title>Relatório de Orçamento - Global Plus</title>
+                <title>Relatório Investimento - Global+</title>
                 <style>
                     body { font-family: Arial, sans-serif; margin: 20px; }
                     .relatorio-item { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 15px; padding: 10px; border-bottom: 1px solid #ccc; }
