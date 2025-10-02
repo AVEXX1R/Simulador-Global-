@@ -115,8 +115,8 @@ function gerarRelatorio() {
     // Header do relatório
     html += `
         <div style="text-align: center; margin-bottom: 30px;">
-            <h2 style="color: #2563eb; margin-bottom: 10px;"><img src="logo.png" alt="Logo" style="height: 30px; width: auto; vertical-align: middle; margin-right: 10px;">Plus</h2>
-            <h2 style="color: #2563eb; margin-bottom: 10px;">Relatório de Investimento Mensal</h2>
+            <h2 style="color: #2563eb; margin-bottom: 10px;"><img src="logo.png" alt="Logo" style="height: 60px; width: auto; vertical-align: middle; margin-right: 10px;"></h2>
+            <h2 style="color: #2563eb; margin-bottom: 10px;"></h2>
             <p style="color: #64748b;">Gerado em: ${new Date().toLocaleDateString('pt-BR')}</p>
         </div>
     `;
@@ -145,13 +145,6 @@ function gerarRelatorio() {
         if (select) {
             const quantidade = select.value;
             const valor = parseFloat(select.options[select.selectedIndex].dataset.value) || 0;
-            html += `
-                <div class="relatorio-item">
-                    <div>${item.label}</div>
-                    <div>${quantidade}</div>
-                    <div>R$ ${valor.toLocaleString('pt-BR')}</div>
-                </div>
-            `;
         }
     });
     
@@ -159,7 +152,7 @@ function gerarRelatorio() {
         <div class="relatorio-item total">
             <div><strong>Total Licenciamento</strong></div>
             <div></div>
-            <div><strong>R$ ${totals.bloco1.toLocaleString('pt-BR')}</strong></div>
+            <div><strong>R$ ${totals.bloco1.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong></div>
         </div>
     `;
     
@@ -176,13 +169,6 @@ function gerarRelatorio() {
         if (select) {
             const quantidade = select.value;
             const valor = parseFloat(select.options[select.selectedIndex].dataset.value) || 0;
-            html += `
-                <div class="relatorio-item">
-                    <div>${item.label}</div>
-                    <div>${quantidade}</div>
-                    <div>R$ ${valor.toLocaleString('pt-BR')}</div>
-                </div>
-            `;
         }
     });
     
@@ -190,7 +176,7 @@ function gerarRelatorio() {
         <div class="relatorio-item total">
             <div><strong>Total Telefonia</strong></div>
             <div></div>
-            <div><strong>R$ ${totals.bloco2.toLocaleString('pt-BR')}</strong></div>
+            <div><strong>R$ ${totals.bloco2.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong></div>
         </div>
     `;
     
@@ -212,23 +198,8 @@ function gerarRelatorio() {
         if (select) {
             const quantidade = select.value;
             const valor = parseFloat(select.options[select.selectedIndex].dataset.value) || 0;
-            html += `
-                <div class="relatorio-item">
-                    <div>${item.label}</div>
-                    <div>${parseInt(quantidade).toLocaleString('pt-BR')}</div>
-                    <div>R$ ${valor.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
-                </div>
-            `;
         }
     });
-    
-    html += `
-        <div class="relatorio-item">
-            <div>WhatsApp</div>
-            <div>-</div>
-            <div>Contratação direto com a Meta</div>
-        </div>
-    `;
     
     html += `
         <div class="relatorio-item total">
@@ -251,13 +222,6 @@ function gerarRelatorio() {
         if (select) {
             const quantidade = select.value;
             const valor = parseFloat(select.options[select.selectedIndex].dataset.value) || 0;
-            html += `
-                <div class="relatorio-item">
-                    <div>${item.label}</div>
-                    <div>${quantidade}</div>
-                    <div>R$ ${valor.toLocaleString('pt-BR')}</div>
-                </div>
-            `;
         }
     });
     
@@ -265,7 +229,7 @@ function gerarRelatorio() {
         <div class="relatorio-item total">
             <div><strong>Total Portal Financeiro</strong></div>
             <div></div>
-            <div><strong>R$ ${totals.bloco4.toLocaleString('pt-BR')}</strong></div>
+            <div><strong>R$ ${totals.bloco4.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong></div>
         </div>
     `;
     
@@ -282,13 +246,6 @@ function gerarRelatorio() {
         if (select) {
             const quantidade = select.value;
             const valor = parseFloat(select.options[select.selectedIndex].dataset.value) || 0;
-            html += `
-                <div class="relatorio-item">
-                    <div>${item.label}</div>
-                    <div>${quantidade}</div>
-                    <div>R$ ${valor.toLocaleString('pt-BR')}</div>
-                </div>
-            `;
         }
     });
     
@@ -296,14 +253,14 @@ function gerarRelatorio() {
         <div class="relatorio-item total">
             <div><strong>Total Enriquecimento</strong></div>
             <div></div>
-            <div><strong>R$ ${totals.bloco5.toLocaleString('pt-BR')}</strong></div>
+            <div><strong>R$ ${totals.bloco5.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong></div>
         </div>
     `;
     
     // Total Geral
     const totalGeral = totals.bloco1 + totals.bloco2 + totals.bloco3 + totals.bloco4 + totals.bloco5;
     html += `
-        <div style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; border-radius: 12px; text-align: center;">
+        <div style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #0e0429 0%, #072b23 100%); color: white; border-radius: 12px; text-align: center;">
             <h2 style="margin: 0; font-size: 1.5rem;">TOTAL DO INVESTIMENTO MENSAL</h2>
             <div style="font-size: 2.5rem; font-weight: 700; margin-top: 15px; color: #e0e0e0ff;">
                 R$ ${totalGeral.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}
