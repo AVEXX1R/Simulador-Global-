@@ -161,7 +161,7 @@ function gerarRelatorio() {
     // Header do relatório
     html += `
         <div style="text-align: center; margin-bottom: 30px;">
-            <h2 style="color: #2563eb; margin-bottom: 10px;">Relatório de Orçamento - Global Plus</h2>
+            <h2 style="color: #2563eb; margin-bottom: 10px;"><img src="logo.png" alt="Logo" style="height: 60px; width: auto; vertical-align: middle; margin-right: 10px;"></h2>
             <p style="color: #64748b;">Gerado em: ${new Date().toLocaleDateString('pt-BR')}</p>
         </div>
     `;
@@ -179,13 +179,6 @@ function gerarRelatorio() {
     html += `<h3 style="margin: 20px 0 10px 0; color: #2563eb;">1. Integrações</h3>`;
     
     const processoIntegrado = document.querySelector('input[name="processo_integrado"]:checked');
-    html += `
-        <div class="relatorio-item">
-            <div>Processo integrado</div>
-            <div>${processoIntegrado ? (processoIntegrado.value === 'sim' ? 'Sim' : 'Não') : 'Não selecionado'}</div>
-            <div>-</div>
-        </div>
-    `;
     
     if (processoIntegrado && processoIntegrado.value === 'sim') {
         const integracoes = [
@@ -202,13 +195,6 @@ function gerarRelatorio() {
             if (input) {
                 const value = input.dataset.value;
                 const text = input.dataset.text || (value > 0 ? `R$ ${parseInt(value).toLocaleString('pt-BR')}` : 'R$ 0');
-                html += `
-                    <div class="relatorio-item">
-                        <div>${integracao.label}</div>
-                        <div>${input.value === 'sim' ? 'Sim' : 'Não'}</div>
-                        <div>${text}</div>
-                    </div>
-                `;
             }
         });
     }
@@ -233,25 +219,11 @@ function gerarRelatorio() {
     ];
     
     funcionalidadesBasicas.forEach(func => {
-        html += `
-            <div class="relatorio-item">
-                <div>${func.label}</div>
-                <div>${func.opcao}</div>
-                <div>${func.valor}</div>
-            </div>
-        `;
     });
     
     const parcelamento = document.querySelector('input[name="parcelamento"]:checked');
     if (parcelamento) {
         const value = parseInt(parcelamento.dataset.value);
-        html += `
-            <div class="relatorio-item">
-                <div>Realizar cálculo de parcelamento</div>
-                <div>${parcelamento.value === 'sim' ? 'Sim' : 'Não'}</div>
-                <div>R$ ${value.toLocaleString('pt-BR')}</div>
-            </div>
-        `;
     }
     
     html += `
@@ -299,13 +271,6 @@ function gerarRelatorio() {
             }
             
             const value = parseInt(input.dataset.value);
-            html += `
-                <div class="relatorio-item">
-                    <div>${func.label}</div>
-                    <div>${opcaoTexto}</div>
-                    <div>R$ ${value.toLocaleString('pt-BR')}</div>
-                </div>
-            `;
         }
     });
     
@@ -323,35 +288,9 @@ function gerarRelatorio() {
     const usuariosAdm = document.querySelector('select[name="usuarios_adm"]').value;
     const usuariosOp = document.querySelector('select[name="usuarios_operacionais"]').value;
     const usuariosChatcob = document.querySelector('select[name="usuarios_chatcob"]').value;
-    
-    html += `
-        <div class="relatorio-item">
-            <div>Quantidade de usuários ADM</div>
-            <div>${usuariosAdm}</div>
-            <div>R$ 0</div>
-        </div>
-        <div class="relatorio-item">
-            <div>Quantidade de usuários Operacionais</div>
-            <div>${usuariosOp}</div>
-            <div>R$ 0</div>
-        </div>
-        <div class="relatorio-item">
-            <div>Quantidade de usuários ChatCob</div>
-            <div>${usuariosChatcob}</div>
-            <div>R$ 0</div>
-        </div>
-    `;
-    
     const portalFinanceiroTreinamento = document.querySelector('input[name="portal_financeiro_treinamento"]:checked');
     if (portalFinanceiroTreinamento) {
         const value = parseInt(portalFinanceiroTreinamento.dataset.value);
-        html += `
-            <div class="relatorio-item">
-                <div>Portal Financeiro</div>
-                <div>${portalFinanceiroTreinamento.value === 'sim' ? 'Sim' : 'Não'}</div>
-                <div>R$ ${value.toLocaleString('pt-BR')}</div>
-            </div>
-        `;
     }
     
     html += `
