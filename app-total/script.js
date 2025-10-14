@@ -97,7 +97,7 @@ function updateBlockTotal(blockId) {
         
     } else if (blockId === 'bloco2') {
         // Funcionalidades básicas (valores fixos + parcelamento)
-        total = 1300; // Soma dos valores fixos
+        total = 1700; // Soma dos valores fixos
         
         const parcelamento = document.querySelector('input[name="parcelamento"]:checked');
         if (parcelamento) {
@@ -215,7 +215,8 @@ function gerarRelatorio() {
         { label: 'Emissão de Segunda via de boleto', opcao: 'Pacote Padrão', valor: 'R$ 100' },
         { label: 'Registro de Status por títulos', opcao: 'Pacote Padrão', valor: 'R$ 100' },
         { label: 'Gerenciamento de acionamentos', opcao: 'Pacote Padrão', valor: 'R$ 400' },
-        { label: 'Encaminha notificações manuais', opcao: 'Pacote Padrão', valor: 'R$ 200' }
+        { label: 'Encaminha notificações manuais', opcao: 'Pacote Padrão', valor: 'R$ 200' },
+        { label: 'Até 2.999 Titulos', opcao: 'Pacote Padrão', valor: 'R$ 400' }
     ];
     
     funcionalidadesBasicas.forEach(func => {

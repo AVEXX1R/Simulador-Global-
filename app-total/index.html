@@ -29,7 +29,7 @@
                     
                     <div class="question-group">
                         <label class="question-label">
-                            <span>Processo integrado</span>
+                            <span class="tooltip" data-tooltip="Ative se os processos do cliente exigirem integração do Global+ com algum ERP externo.">Processo integrado</span>
                             <div class="radio-group">
                                 <label class="radio-option">
                                     <input type="radio" name="processo_integrado" value="sim" onchange="toggleIntegracoes(true)">
@@ -49,7 +49,7 @@
                         <div class="question-row">
                             <div class="question-col">
                                 <label class="question-label">
-                                    <span>Integração com Datasul</span>
+                                    <span class="tooltip" data-tooltip="O ERP Datasul é um sistema de gestão empresarial (ERP) da TOTVS.">Integração com Datasul</span>
                                     <div class="radio-group">
                                         <label class="radio-option">
                                             <input type="radio" name="datasul" value="sim" data-value="2950" onchange="updateBlockTotal('bloco1')">
@@ -72,7 +72,7 @@
                         <div class="question-row">
                             <div class="question-col">
                                 <label class="question-label">
-                                    <span>Integração com Protheus</span>
+                                    <span class="tooltip" data-tooltip="O ERP Protheus é um sistema de gestão empresarial (ERP) da TOTVS.">Integração com Protheus</span>
                                     <div class="radio-group">
                                         <label class="radio-option">
                                             <input type="radio" name="protheus" value="sim" data-value="2950" onchange="updateBlockTotal('bloco1')">
@@ -95,7 +95,7 @@
                         <div class="question-row">
                             <div class="question-col">
                                 <label class="question-label">
-                                    <span>Integração com SAP</span>
+                                    <span class="tooltip" data-tooltip="ERP SAP é um sistema de Planejamento de Recursos Empresariais (ERP) da empresa SAP.">Integração com SAP</span>
                                     <div class="radio-group">
                                         <label class="radio-option">
                                             <input type="radio" name="sap" value="sim" data-value="15000" onchange="updateBlockTotal('bloco1')">
@@ -118,7 +118,7 @@
                         <div class="question-row">
                             <div class="question-col">
                                 <label class="question-label">
-                                    <span>Importação ASAAS - PAGAR.ME</span>
+                                    <span class="tooltip" data-tooltip="ASAAS / Pagar.me são plataformas de pagamentos online que funcionam como gateway/HUB, recebendo pagamentos de cobranças em boletos, cartões e PIX e repassando em um ou mais formatos definidos pelo cliente.">Importação ASAAS - PAGAR.ME</span>
                                     <div class="radio-group">
                                         <label class="radio-option">
                                             <input type="radio" name="asaas" value="sim" data-value="6000" onchange="updateBlockTotal('bloco1')">
@@ -141,7 +141,7 @@
                         <div class="question-row">
                             <div class="question-col">
                                 <label class="question-label">
-                                    <span>Cliente desenvolve a integração</span>
+                                    <span class="tooltip" data-tooltip="O cliente possui estrutura de TI/Desenvolvimento para desenvolver a a integração por conta própria?">Cliente desenvolve a integração</span>
                                     <div class="radio-group">
                                         <label class="radio-option">
                                             <input type="radio" name="cliente_dev" value="sim" data-value="0" data-text="R$ 0" onchange="updateBlockTotal('bloco1')">
@@ -164,7 +164,7 @@
                         <div class="question-row">
                             <div class="question-col">
                                 <label class="question-label">
-                                    <span>Integração com outro sistema</span>
+                                    <span class="tooltip" data-tooltip="Caso a integração não seja com nenhum dos sistemas já precificados acima, marque essa opção.">Integração com outro sistema</span>
                                     <div class="radio-group">
                                         <label class="radio-option">
                                             <input type="radio" name="outro_sistema" value="sim" data-value="0" data-text="Falar com time de desenvolvimento" onchange="updateBlockTotal('bloco1')">
@@ -199,23 +199,24 @@
                     <div class="question-row">
                         <div class="question-col">
                             <label class="question-label">
-                                <span>Pacote Standard</span>
+                                <span class="tooltip" data-tooltip="Pacote base com funcionalidades padrão do Global+">Pacote Standard</span>
                                 <div class="standard-option">Régua de cobrança</div>
                                 <div class="standard-option">Emissão de segunda via de boleto</div>
                                 <div class="standard-option">Registro de Status por títulos</div>
                                 <div class="standard-option">Gerenciamento de acionamentos</div>
                                 <div class="standard-option">Encaminha notificações manuais</div>
+                                <div class="standard-option">Até 2.999 titulos</div>
                             </label>
                         </div>
                         <div class="value-col">
-                            <span class="value-display">R$ 1300</span>
+                            <span class="value-display">R$ 1700</span>
                         </div>
                     </div>
 
                     <div class="question-row">
                         <div class="question-col">
                             <label class="question-label">
-                                <span>Realizar cálculo de parcelamento</span>
+                                <span class="tooltip" data-tooltip="Cliente realizar cálculo de parcelamento nas dividas com TCD Personalizado?">Realizar cálculo de parcelamento</span>
                                 <div class="radio-group">
                                     <label class="radio-option">
                                         <input type="radio" name="parcelamento" value="sim" data-value="300" onchange="updateBlockTotal('bloco2')">
@@ -236,7 +237,7 @@
                     </div>
 
                     <div class="block-total">
-                        <strong>Total Funcionalidades Básicas: <span id="bloco2-total">R$ 1.300</span></strong>
+                        <strong>Total Funcionalidades Básicas: <span id="bloco2-total">R$ 1.700</span></strong>
                     </div>
                 </section>
 
@@ -246,15 +247,17 @@
                         <h2><i class="fas fa-rocket"></i> Funcionalidades Avançadas</h2>
                     </div>
 
+                <div class="highlight-border">
+                    <span class="vertical-label">INTEGRAÇÃO</span>
                     <div class="question-row">
                         <div class="question-col">
                             <label class="question-label">
-                                <span>Qtde de títulos em aberto</span>
+                                <span class="tooltip" data-tooltip="Volume de titulos que será enviado pelo cliente">Qtde de títulos em aberto</span>
                                 <div class="radio-group">
                                     <label class="radio-option">
-                                        <input type="radio" name="titulos_aberto" value="ate_2999" data-value="400" onchange="updateBlockTotal('bloco3')" checked>
+                                        <input type="radio" name="titulos_aberto" value="ate_2999" data-value="0" onchange="updateBlockTotal('bloco3')" checked>
                                         <span class="radio-custom"></span>
-                                        Até 2.999 títulos
+                                        Padrão (Até 2.999 títulos)
                                     </label>
                                     <label class="radio-option">
                                         <input type="radio" name="titulos_aberto" value="3000_24999" data-value="1000" onchange="updateBlockTotal('bloco3')">
@@ -277,53 +280,7 @@
                     <div class="question-row">
                         <div class="question-col">
                             <label class="question-label">
-                                <span>Usa meios de cobrança online</span>
-                                <div class="radio-group">
-                                    <label class="radio-option">
-                                        <input type="radio" name="cobranca_online" value="sim" data-value="300" onchange="updateBlockTotal('bloco3')">
-                                        <span class="radio-custom"></span>
-                                        Sim
-                                    </label>
-                                    <label class="radio-option">
-                                        <input type="radio" name="cobranca_online" value="nao" data-value="0" onchange="updateBlockTotal('bloco3')" checked>
-                                        <span class="radio-custom"></span>
-                                        Não
-                                    </label>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="value-col">
-                            <span class="value-display" id="cobranca_online-value">R$ 0</span>
-                        </div>
-                    </div>
-
-                    <div class="question-row">
-                        <div class="question-col">
-                            <label class="question-label">
-                                <span>Usa PEFIN/SERASA</span>
-                                <div class="radio-group">
-                                    <label class="radio-option">
-                                        <input type="radio" name="pefin_serasa" value="sim" data-value="400" onchange="updateBlockTotal('bloco3')">
-                                        <span class="radio-custom"></span>
-                                        Sim
-                                    </label>
-                                    <label class="radio-option">
-                                        <input type="radio" name="pefin_serasa" value="nao" data-value="0" onchange="updateBlockTotal('bloco3')" checked>
-                                        <span class="radio-custom"></span>
-                                        Não
-                                    </label>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="value-col">
-                            <span class="value-display" id="pefin_serasa-value">R$ 0</span>
-                        </div>
-                    </div>
-
-                    <div class="question-row">
-                        <div class="question-col">
-                            <label class="question-label">
-                                <span>Distribuição de Cobrança Global?</span>
+                                <span class="tooltip" data-tooltip="Gerar o borderô para Global - Cliente define na régua os critérios e o envio ocorre automaticamente.">Distribuição de Cobrança Global?</span>
                                 <div class="radio-group">
                                     <label class="radio-option">
                                         <input type="radio" name="distribuicao_global" value="sim" data-value="200" onchange="updateBlockTotal('bloco3')">
@@ -346,122 +303,7 @@
                     <div class="question-row">
                         <div class="question-col">
                             <label class="question-label">
-                                <span>Realiza mailing para distribuição de carteira entre analistas</span>
-                                <div class="radio-group">
-                                    <label class="radio-option">
-                                        <input type="radio" name="mailing_carteira" value="sim" data-value="300" onchange="updateBlockTotal('bloco3')">
-                                        <span class="radio-custom"></span>
-                                        Sim
-                                    </label>
-                                    <label class="radio-option">
-                                        <input type="radio" name="mailing_carteira" value="nao" data-value="0" onchange="updateBlockTotal('bloco3')" checked>
-                                        <span class="radio-custom"></span>
-                                        Não
-                                    </label>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="value-col">
-                            <span class="value-display" id="mailing_carteira-value">R$ 0</span>
-                        </div>
-                    </div>
-
-                    <div class="question-row">
-                        <div class="question-col">
-                            <label class="question-label">
-                                <span>Realizar campanha de URA?</span>
-                                <div class="radio-group">
-                                    <label class="radio-option">
-                                        <input type="radio" name="campanha_ura" value="sim" data-value="500" onchange="updateBlockTotal('bloco3')">
-                                        <span class="radio-custom"></span>
-                                        Sim
-                                    </label>
-                                    <label class="radio-option">
-                                        <input type="radio" name="campanha_ura" value="nao" data-value="0" onchange="updateBlockTotal('bloco3')" checked>
-                                        <span class="radio-custom"></span>
-                                        Não
-                                    </label>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="value-col">
-                            <span class="value-display" id="campanha_ura-value">R$ 0</span>
-                        </div>
-                    </div>
-
-                    <div class="question-row">
-                        <div class="question-col">
-                            <label class="question-label">
-                                <span>Realiza discagem Click2call</span>
-                                <div class="radio-group">
-                                    <label class="radio-option">
-                                        <input type="radio" name="click2call" value="sim" data-value="100" onchange="updateBlockTotal('bloco3')">
-                                        <span class="radio-custom"></span>
-                                        Sim
-                                    </label>
-                                    <label class="radio-option">
-                                        <input type="radio" name="click2call" value="nao" data-value="0" onchange="updateBlockTotal('bloco3')" checked>
-                                        <span class="radio-custom"></span>
-                                        Não
-                                    </label>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="value-col">
-                            <span class="value-display" id="click2call-value">R$ 0</span>
-                        </div>
-                    </div>
-
-                    <div class="question-row">
-                        <div class="question-col">
-                            <label class="question-label">
-                                <span>Realiza enriquecimento de base</span>
-                                <div class="radio-group">
-                                    <label class="radio-option">
-                                        <input type="radio" name="enriquecimento_base" value="sim" data-value="100" onchange="updateBlockTotal('bloco3')">
-                                        <span class="radio-custom"></span>
-                                        Sim
-                                    </label>
-                                    <label class="radio-option">
-                                        <input type="radio" name="enriquecimento_base" value="nao" data-value="0" onchange="updateBlockTotal('bloco3')" checked>
-                                        <span class="radio-custom"></span>
-                                        Não
-                                    </label>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="value-col">
-                            <span class="value-display" id="enriquecimento_base-value">R$ 0</span>
-                        </div>
-                    </div>
-
-                    <div class="question-row">
-                        <div class="question-col">
-                            <label class="question-label">
-                                <span>Realiza campanha de discagem - Discador</span>
-                                <div class="radio-group">
-                                    <label class="radio-option">
-                                        <input type="radio" name="discador" value="sim" data-value="2000" onchange="updateBlockTotal('bloco3')">
-                                        <span class="radio-custom"></span>
-                                        Sim
-                                    </label>
-                                    <label class="radio-option">
-                                        <input type="radio" name="discador" value="nao" data-value="0" onchange="updateBlockTotal('bloco3')" checked>
-                                        <span class="radio-custom"></span>
-                                        Não
-                                    </label>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="value-col">
-                            <span class="value-display" id="discador-value">R$ 0</span>
-                        </div>
-                    </div>
-
-                    <div class="question-row">
-                        <div class="question-col">
-                            <label class="question-label">
-                                <span>Usa API Oficial Whatsapp e não tem configurado?</span>
+                                <span class="tooltip" data-tooltip="Cobrança única para configurar a ferramenta. Todo o consumo de WhatsApp o cliente irá continuar pagando para a meta.">Usa API Oficial Whatsapp e não tem configurado?</span>
                                 <div class="radio-group">
                                     <label class="radio-option">
                                         <input type="radio" name="whatsapp_api" value="sim" data-value="1000" onchange="updateBlockTotal('bloco3')">
@@ -486,56 +328,10 @@
                         </div>
                     </div>
 
-                    <div class="question-row">
+                     <div class="question-row">
                         <div class="question-col">
                             <label class="question-label">
-                                <span>Portal Financeiro Integrado PontoCob</span>
-                                <div class="radio-group">
-                                    <label class="radio-option">
-                                        <input type="radio" name="portal_financeiro" value="sim" data-value="650" onchange="updateBlockTotal('bloco3')">
-                                        <span class="radio-custom"></span>
-                                        Sim
-                                    </label>
-                                    <label class="radio-option">
-                                        <input type="radio" name="portal_financeiro" value="nao" data-value="0" onchange="updateBlockTotal('bloco3')" checked>
-                                        <span class="radio-custom"></span>
-                                        Não
-                                    </label>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="value-col">
-                            <span class="value-display" id="portal_financeiro-value">R$ 0</span>
-                        </div>
-                    </div>
-
-                    <div class="question-row">
-                        <div class="question-col">
-                            <label class="question-label">
-                                <span>Bot Auto Atendimento - Default PontoCob</span>
-                                <div class="radio-group">
-                                    <label class="radio-option">
-                                        <input type="radio" name="bot_atendimento" value="sim" data-value="1500" onchange="updateBlockTotal('bloco3')">
-                                        <span class="radio-custom"></span>
-                                        Sim
-                                    </label>
-                                    <label class="radio-option">
-                                        <input type="radio" name="bot_atendimento" value="nao" data-value="0" onchange="updateBlockTotal('bloco3')" checked>
-                                        <span class="radio-custom"></span>
-                                        Não
-                                    </label>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="value-col">
-                            <span class="value-display" id="bot_atendimento-value">R$ 0</span>
-                        </div>
-                    </div>
-
-                    <div class="question-row">
-                        <div class="question-col">
-                            <label class="question-label">
-                                <span>Necessita de Webhook</span>
+                                <span class="tooltip" data-tooltip="Integra atualizações entre sistemas - Ex. vencimentos, status ficam atualizados tanto no Global+ quanto no sistema do Cliente - via de mão dupla.">Necessita de Webhook</span>
                                 <div class="radio-group">
                                     <label class="radio-option">
                                         <input type="radio" name="webhook" value="sim" data-value="1000" onchange="updateBlockTotal('bloco3')">
@@ -558,7 +354,7 @@
                     <div class="question-row">
                         <div class="question-col">
                             <label class="question-label">
-                                <span>Disponibilidade de View para integração com BI</span>
+                                <span class="tooltip" data-tooltip="Para configurar usuario no banco de dados. Cliente só cria os dashboards.">Disponibilidade de View para integração com BI</span>
                                 <div class="radio-group">
                                     <label class="radio-option">
                                         <input type="radio" name="view_bi" value="sim" data-value="200" onchange="updateBlockTotal('bloco3')">
@@ -577,6 +373,220 @@
                             <span class="value-display" id="view_bi-value">R$ 0</span>
                         </div>
                     </div>
+                </div>
+
+                <div class="highlight-border">
+                    <span class="vertical-label">FINANCEIRO</span>
+                    <div class="question-row">
+                        <div class="question-col">
+                            <label class="question-label">
+                                <span class="tooltip" data-tooltip="Gerar link de pagamentos CARTÃO, BOLETO, recebe na carteria intermediadora e repassa ao cliente.">Usa meios de cobrança online</span>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="cobranca_online" value="sim" data-value="300" onchange="updateBlockTotal('bloco3')">
+                                        <span class="radio-custom"></span>
+                                        Sim
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="cobranca_online" value="nao" data-value="0" onchange="updateBlockTotal('bloco3')" checked>
+                                        <span class="radio-custom"></span>
+                                        Não
+                                    </label>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="value-col">
+                            <span class="value-display" id="cobranca_online-value">R$ 0</span>
+                        </div>
+                    </div>
+
+                    <div class="question-row">
+                        <div class="question-col">
+                            <label class="question-label">
+                                <span class="tooltip" data-tooltip="Com régua definida, inclui e retira por lote de forma manual (exporta o arquivo e faz upload no Serasa)">Usa PEFIN/SERASA</span>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="pefin_serasa" value="sim" data-value="400" onchange="updateBlockTotal('bloco3')">
+                                        <span class="radio-custom"></span>
+                                        Sim
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="pefin_serasa" value="nao" data-value="0" onchange="updateBlockTotal('bloco3')" checked>
+                                        <span class="radio-custom"></span>
+                                        Não
+                                    </label>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="value-col">
+                            <span class="value-display" id="pefin_serasa-value">R$ 0</span>
+                        </div>
+                    </div>
+
+                    <div class="question-row">
+                        <div class="question-col">
+                            <label class="question-label">
+                                <span class="tooltip" data-tooltip="Ferramenta de autoatendimento para o devedor, personalizado com logo do cliente.">Portal Financeiro Integrado PontoCob</span>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="portal_financeiro" value="sim" data-value="650" onchange="updateBlockTotal('bloco3')">
+                                        <span class="radio-custom"></span>
+                                        Sim
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="portal_financeiro" value="nao" data-value="0" onchange="updateBlockTotal('bloco3')" checked>
+                                        <span class="radio-custom"></span>
+                                        Não
+                                    </label>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="value-col">
+                            <span class="value-display" id="portal_financeiro-value">R$ 0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-border">
+                    <span class="vertical-label">COMUNICAÇÃO</span>
+                    <div class="question-row">
+                        <div class="question-col">
+                            <label class="question-label">
+                                <span class="tooltip" data-tooltip="Trabalho de cobrança interna - com distribuição de carteira (exemplo região x para operador y)">Realiza mailing para distribuição de carteira entre analistas</span>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="mailing_carteira" value="sim" data-value="300" onchange="updateBlockTotal('bloco3')">
+                                        <span class="radio-custom"></span>
+                                        Sim
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="mailing_carteira" value="nao" data-value="0" onchange="updateBlockTotal('bloco3')" checked>
+                                        <span class="radio-custom"></span>
+                                        Não
+                                    </label>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="value-col">
+                            <span class="value-display" id="mailing_carteira-value">R$ 0</span>
+                        </div>
+                    </div>
+
+                    <div class="question-row">
+                        <div class="question-col">
+                            <label class="question-label">
+                                <span class="tooltip" data-tooltip="Exemplo: Liga com robo para confirmar dados e confirmar envio de boleto, Global+ envia o boleto para e-mail cadastrado na base, pode ser SMS/Whats">Realizar campanha de URA?</span>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="campanha_ura" value="sim" data-value="500" onchange="updateBlockTotal('bloco3')">
+                                        <span class="radio-custom"></span>
+                                        Sim
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="campanha_ura" value="nao" data-value="0" onchange="updateBlockTotal('bloco3')" checked>
+                                        <span class="radio-custom"></span>
+                                        Não
+                                    </label>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="value-col">
+                            <span class="value-display" id="campanha_ura-value">R$ 0</span>
+                        </div>
+                    </div>
+
+                    <div class="question-row">
+                        <div class="question-col">
+                            <label class="question-label">
+                                <span class="tooltip" data-tooltip="Ligar para o cliente a partir da tela de atendimento, com ramal web.">Realiza discagem Click2call</span>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="click2call" value="sim" data-value="100" onchange="updateBlockTotal('bloco3')">
+                                        <span class="radio-custom"></span>
+                                        Sim
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="click2call" value="nao" data-value="0" onchange="updateBlockTotal('bloco3')" checked>
+                                        <span class="radio-custom"></span>
+                                        Não
+                                    </label>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="value-col">
+                            <span class="value-display" id="click2call-value">R$ 0</span>
+                        </div>
+                    </div>
+
+                    <div class="question-row">
+                        <div class="question-col">
+                            <label class="question-label">
+                                <span class="tooltip" data-tooltip="Cliente realiza enriquecimento?">Realiza enriquecimento de base</span>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="enriquecimento_base" value="sim" data-value="100" onchange="updateBlockTotal('bloco3')">
+                                        <span class="radio-custom"></span>
+                                        Sim
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="enriquecimento_base" value="nao" data-value="0" onchange="updateBlockTotal('bloco3')" checked>
+                                        <span class="radio-custom"></span>
+                                        Não
+                                    </label>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="value-col">
+                            <span class="value-display" id="enriquecimento_base-value">R$ 0</span>
+                        </div>
+                    </div>
+
+                    <div class="question-row">
+                        <div class="question-col">
+                            <label class="question-label">
+                                <span class="tooltip" data-tooltip="Tem que contratar Discador">Realiza campanha de discagem - Discador</span>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="discador" value="sim" data-value="2000" onchange="updateBlockTotal('bloco3')">
+                                        <span class="radio-custom"></span>
+                                        Sim
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="discador" value="nao" data-value="0" onchange="updateBlockTotal('bloco3')" checked>
+                                        <span class="radio-custom"></span>
+                                        Não
+                                    </label>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="value-col">
+                            <span class="value-display" id="discador-value">R$ 0</span>
+                        </div>
+                    </div>
+
+                    <div class="question-row">
+                        <div class="question-col">
+                            <label class="question-label">
+                                <span class="tooltip" data-tooltip="Bot padrão, entrega boleto, débitos. Personalizavel (Falar com Joubert) (Obrigatório ter ChatCob)">Bot Auto Atendimento - Default PontoCob</span>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="bot_atendimento" value="sim" data-value="1500" onchange="updateBlockTotal('bloco3')">
+                                        <span class="radio-custom"></span>
+                                        Sim
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="bot_atendimento" value="nao" data-value="0" onchange="updateBlockTotal('bloco3')" checked>
+                                        <span class="radio-custom"></span>
+                                        Não
+                                    </label>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="value-col">
+                            <span class="value-display" id="bot_atendimento-value">R$ 0</span>
+                        </div>
+                    </div>
+                </div>
 
                     <div class="block-total">
                         <strong>Total Funcionalidades Avançadas: <span id="bloco3-total">R$ 400</span></strong>

@@ -110,6 +110,59 @@ body {
     margin-bottom: 20px;
 }
 
+.tooltip {
+  position: relative;
+  cursor: help;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 120%; /* posição acima do texto */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  font-size: 0.85em;
+  z-index: 10;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+}
+
+.highlight-border {
+    border-left: 3px solid #000000;
+    padding-left: 8px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    position: relative;  /* importante pra o texto vertical */
+    border-radius: 8px; 
+    background: rgba(68, 68, 68, 0.05);
+    transition: all 0.3s ease;
+}
+.highlight-border:hover {
+    background: rgba(68, 68, 68, 0.1);
+}
+
+.vertical-label {
+    position: absolute;
+    left: -15px;
+    top: 60%;
+    transform: rotate(-90deg) translateY(-50%);
+    transform-origin: left top;
+    color: #555;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
 .question-row {
     display: grid;
     grid-template-columns: 1fr auto;
