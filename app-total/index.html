@@ -13,7 +13,7 @@
     <div class="container">
         <header class="header">
             <div class="header-content">
-                <h1><i class="fas fa-calculator"></i><img src="logo.png" alt="Logo" class="logo"></h1>
+                <h1><img src="logo.png" alt="Logo" class="logo"></h1>
                 <p>Configure seu projeto e obtenha uma estimativa de investimento personalizada</p>
             </div>
         </header>
@@ -121,7 +121,7 @@
                                     <span class="tooltip" data-tooltip="ASAAS / Pagar.me são plataformas de pagamentos online que funcionam como gateway/HUB, recebendo pagamentos de cobranças em boletos, cartões e PIX e repassando em um ou mais formatos definidos pelo cliente.">Importação ASAAS - PAGAR.ME</span>
                                     <div class="radio-group">
                                         <label class="radio-option">
-                                            <input type="radio" name="asaas" value="sim" data-value="6000" onchange="updateBlockTotal('bloco1')">
+                                            <input type="radio" name="asaas" value="sim" data-value="2500" onchange="updateBlockTotal('bloco1')">
                                             <span class="radio-custom"></span>
                                             Sim
                                         </label>
@@ -135,6 +135,29 @@
                             </div>
                             <div class="value-col">
                                 <span class="value-display" id="asaas-value">R$ 0</span>
+                            </div>
+                        </div>
+
+                          <div class="question-row">
+                            <div class="question-col">
+                                <label class="question-label">
+                                    <span class="tooltip" data-tooltip="Winthor é um sistema de gestão empresarial (ERP) da TOTVS líder para os segmentos de atacadistas, distribuidores e varejistas, automatizando e integrando processos como compras, vendas, finanças, estoque e logística">Winthor - TOTVS</span>
+                                    <div class="radio-group">
+                                        <label class="radio-option">
+                                            <input type="radio" name="winthor" value="sim" data-value="6000" onchange="updateBlockTotal('bloco1')">
+                                            <span class="radio-custom"></span>
+                                            Sim
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="winthor" value="nao" data-value="0" onchange="updateBlockTotal('bloco1')" checked>
+                                            <span class="radio-custom"></span>
+                                            Não
+                                        </label>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="value-col">
+                                <span class="value-display" id="winthor-value">R$ 0</span>
                             </div>
                         </div>
 
@@ -475,52 +498,6 @@
                     <div class="question-row">
                         <div class="question-col">
                             <label class="question-label">
-                                <span class="tooltip" data-tooltip="Exemplo: Liga com robo para confirmar dados e confirmar envio de boleto, Global+ envia o boleto para e-mail cadastrado na base, pode ser SMS/Whats">Realizar campanha de URA?</span>
-                                <div class="radio-group">
-                                    <label class="radio-option">
-                                        <input type="radio" name="campanha_ura" value="sim" data-value="500" onchange="updateBlockTotal('bloco3')">
-                                        <span class="radio-custom"></span>
-                                        Sim
-                                    </label>
-                                    <label class="radio-option">
-                                        <input type="radio" name="campanha_ura" value="nao" data-value="0" onchange="updateBlockTotal('bloco3')" checked>
-                                        <span class="radio-custom"></span>
-                                        Não
-                                    </label>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="value-col">
-                            <span class="value-display" id="campanha_ura-value">R$ 0</span>
-                        </div>
-                    </div>
-
-                    <div class="question-row">
-                        <div class="question-col">
-                            <label class="question-label">
-                                <span class="tooltip" data-tooltip="Ligar para o cliente a partir da tela de atendimento, com ramal web.">Realiza discagem Click2call</span>
-                                <div class="radio-group">
-                                    <label class="radio-option">
-                                        <input type="radio" name="click2call" value="sim" data-value="100" onchange="updateBlockTotal('bloco3')">
-                                        <span class="radio-custom"></span>
-                                        Sim
-                                    </label>
-                                    <label class="radio-option">
-                                        <input type="radio" name="click2call" value="nao" data-value="0" onchange="updateBlockTotal('bloco3')" checked>
-                                        <span class="radio-custom"></span>
-                                        Não
-                                    </label>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="value-col">
-                            <span class="value-display" id="click2call-value">R$ 0</span>
-                        </div>
-                    </div>
-
-                    <div class="question-row">
-                        <div class="question-col">
-                            <label class="question-label">
                                 <span class="tooltip" data-tooltip="Cliente realiza enriquecimento?">Realiza enriquecimento de base</span>
                                 <div class="radio-group">
                                     <label class="radio-option">
@@ -538,29 +515,6 @@
                         </div>
                         <div class="value-col">
                             <span class="value-display" id="enriquecimento_base-value">R$ 0</span>
-                        </div>
-                    </div>
-
-                    <div class="question-row">
-                        <div class="question-col">
-                            <label class="question-label">
-                                <span class="tooltip" data-tooltip="Tem que contratar Discador">Realiza campanha de discagem - Discador</span>
-                                <div class="radio-group">
-                                    <label class="radio-option">
-                                        <input type="radio" name="discador" value="sim" data-value="2000" onchange="updateBlockTotal('bloco3')">
-                                        <span class="radio-custom"></span>
-                                        Sim
-                                    </label>
-                                    <label class="radio-option">
-                                        <input type="radio" name="discador" value="nao" data-value="0" onchange="updateBlockTotal('bloco3')" checked>
-                                        <span class="radio-custom"></span>
-                                        Não
-                                    </label>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="value-col">
-                            <span class="value-display" id="discador-value">R$ 0</span>
                         </div>
                     </div>
 

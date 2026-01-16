@@ -37,6 +37,7 @@ function resetBlockValues(blockId) {
         document.getElementById('protheus-value').textContent = 'R$ 0';
         document.getElementById('sap-value').textContent = 'R$ 0';
         document.getElementById('asaas-value').textContent = 'R$ 0';
+        document.getElementById('winthor-value').textContent = 'R$ 0';
         document.getElementById('cliente_dev-value').textContent = 'Falar com time de desenvolvimento';
         document.getElementById('outro_sistema-value').textContent = 'R$ 0';
     }
@@ -55,6 +56,7 @@ function updateBlockTotal(blockId) {
             const protheus = document.querySelector('input[name="protheus"]:checked');
             const sap = document.querySelector('input[name="sap"]:checked');
             const asaas = document.querySelector('input[name="asaas"]:checked');
+            const winthor = document.querySelector('input[name="winthor"]:checked');
             
             if (datasul) {
                 const value = parseInt(datasul.dataset.value);
@@ -78,6 +80,12 @@ function updateBlockTotal(blockId) {
                 const value = parseInt(asaas.dataset.value);
                 total += value;
                 document.getElementById('asaas-value').textContent = value > 0 ? `R$ ${value.toLocaleString('pt-BR')}` : 'R$ 0';
+            }
+
+            if (winthor) {
+                const value = parseInt(winthor.dataset.value);
+                total += value;
+                document.getElementById('winthor-value').textContent = value > 0 ? `R$ ${value.toLocaleString('pt-BR')}` : 'R$ 0';
             }
             
             // Atualizar valores de texto especiais
